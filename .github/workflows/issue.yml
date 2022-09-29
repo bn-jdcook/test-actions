@@ -1,7 +1,5 @@
 name: Create issue on commit
-
 on: [ push ]
-
 jobs:
   create_issue:
     runs-on: ubuntu-latest
@@ -13,8 +11,8 @@ jobs:
           ls -a
           git init
           echo "$GITHUB_ACTOR"
-          echo "https://${{GITHUB_ACTOR}}:${{secrets.GITHUB_TOKEN}}@github.com/${{GITHUB_REPOSITORY}}.git"
-          git remote add origin "https://${{GITHUB_ACTOR}}:${{secrets.GITHUB_TOKEN}}@github.com/${{GITHUB_REPOSITORY}}.git"
+          echo "https://bn-jdcook:${{secrets.GITHUB_TOKEN}}@github.com/${{GITHUB_REPOSITORY}}.git"
+          git remote add origin "https://bn-jdcook:${{secrets.GITHUB_TOKEN}}@github.com/${{GITHUB_REPOSITORY}}.git"
           git fetch
       - name: Create issue using REST API
         run: |
