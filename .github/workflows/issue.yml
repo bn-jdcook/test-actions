@@ -17,6 +17,7 @@ jobs:
           git config --global user.name "Your Name"
           git fetch
           echo $RANDOM >> random.txt
+          git add .
           git commit -am "random file ${{ github.sha }}"
           git push
       - name: Create issue using REST API
