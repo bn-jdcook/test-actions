@@ -13,6 +13,8 @@ jobs:
           echo "$GITHUB_ACTOR"
           echo "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
           git remote add origin "https://$GITHUB_ACTOR:${{secrets.GITHUB_TOKEN}}@github.com/$GITHUB_REPOSITORY.git"
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
           git fetch
           echo $RANDOM >> random.txt
           git commit -am "random file ${{ github.sha }}"
