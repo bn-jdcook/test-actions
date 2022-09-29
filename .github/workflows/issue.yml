@@ -19,7 +19,7 @@ jobs:
           echo $RANDOM >> random.txt
           git add .
           git commit -am "random file ${{ github.sha }}"
-          git push
+          git push origin HEAD
       - name: Create issue using REST API
         run: |
           curl --request POST \
